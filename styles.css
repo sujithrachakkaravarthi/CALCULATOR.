@@ -1,0 +1,98 @@
+:root {
+  --bg: #f3c6c6;
+  --btn-bg: #f5a9a9;
+  --btn-hover: #e68888;
+  --text: #000;
+  --shadow-light: #ffffff;
+  --shadow-dark: #c48787;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.4s;
+}
+
+.calculator-container {
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 8px 8px 15px var(--shadow-dark),
+              -8px -8px 15px var(--shadow-light);
+  width: 300px;
+  position: relative;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  text-align: right;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 10px var(--shadow-dark),
+              inset -5px -5px 10px var(--shadow-light);
+  background: #fff;
+  color: var(--text);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--btn-bg);
+  box-shadow: 5px 5px 10px var(--shadow-dark),
+              -5px -5px 10px var(--shadow-light);
+  transition: 0.2s;
+  color: var(--text);
+}
+
+button:hover {
+  background: var(--btn-hover);
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.history {
+  margin-top: 15px;
+  max-height: 100px;
+  overflow-y: auto;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* Dark Mode */
+body.dark {
+  --bg: #2d2d2d;
+  --btn-bg: #444;
+  --btn-hover: #555;
+  --text: #fff;
+  --shadow-light: #3c3c3c;
+  --shadow-dark: #1a1a1a;
+}
+
+body.dark input[type="text"] {
+  background: #222;
+}
